@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "449309392245",
+    "project_id": "ultrasenses-fitboard-1",
+    "storage_bucket": "ultrasenses-fitboard-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449309392245:android:66fcc52933862e444c273c",
+        "android_client_info": {
+          "package_name": "com.example.ultrasenses_fitboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449309392245-v71brqg4u7ufr16jfrai1egpvh3ll275.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLN1wBfUqwPSSph_a6k6VZcOVHchhMFsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449309392245-v71brqg4u7ufr16jfrai1egpvh3ll275.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
