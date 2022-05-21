@@ -22,17 +22,17 @@ class SignInPage extends StatelessWidget {
       child: BlocConsumer<SignInBloc, SignInState>(
         buildWhen: (_, currState) => currState is SignInInitial,
         builder: (context, state) {
-          return SignInContent();
+          return const SignInContent();
         },
         listenWhen: (_, currState) =>
             currState is NextForgotPasswordPageState || currState is NextSignUpPageState || currState is NextTabBarPageState || currState is ErrorState,
         listener: (context, state) {
           if (state is NextForgotPasswordPageState) {
-            Navigator.of(context).push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ForgotPasswordPage()));
           } else if (state is NextSignUpPageState) {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => SignUpPage()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const SignUpPage()));
           } else if (state is NextTabBarPageState) {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => TabBarPage()));
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const TabBarPage()));
           } else if (state is ErrorState) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(state.message)),

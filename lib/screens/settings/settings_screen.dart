@@ -70,7 +70,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               TextButton(
                   onPressed: () async {
-                    await Navigator.push(context, MaterialPageRoute(builder: (context) => EditAccountScreen()));
+                    await Navigator.push(context, MaterialPageRoute(builder: (context) => const EditAccountScreen()));
                     setState(() {
                       photoUrl = user?.photoURL;
                     });
@@ -108,7 +108,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   );
                 }),
             const SizedBox(height: 15),
-            const Text(TextConstants.joinUs, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
+            const Text(TextConstants.joinUs, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
             const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

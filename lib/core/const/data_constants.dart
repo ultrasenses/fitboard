@@ -7,17 +7,17 @@ import 'package:ultrasenses_fitboard/screens/onboarding/widget/onboarding_tile.d
 class DataConstants {
   // Onboarding
   static final onboardingTiles = [
-    OnboardingTile(
+    const OnboardingTile(
       title: TextConstants.onboarding1Title,
       mainText: TextConstants.onboarding1Description,
       imagePath: PathConstants.onboarding1,
     ),
-    OnboardingTile(
+    const OnboardingTile(
       title: TextConstants.onboarding2Title,
       mainText: TextConstants.onboarding2Description,
       imagePath: PathConstants.onboarding2,
     ),
-    OnboardingTile(
+    const OnboardingTile(
       title: TextConstants.onboarding3Title,
       mainText: TextConstants.onboarding3Description,
       imagePath: PathConstants.onboarding3,

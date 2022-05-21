@@ -8,14 +8,13 @@ import 'package:ultrasenses_fitboard/screens/start_workout/page/start_workout_pa
 import 'package:ultrasenses_fitboard/screens/start_workout/widget/start_workout_video.dart';
 import 'package:ultrasenses_fitboard/screens/workout_details_screen/bloc/workoutdetails_bloc.dart' as workout_bloc;
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class StartWorkoutContent extends StatelessWidget {
   final ExerciseData exercise;
   final ExerciseData? nextExercise;
 
-  StartWorkoutContent({required this.exercise, required this.nextExercise});
+  const StartWorkoutContent({required this.exercise, required this.nextExercise});
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +61,9 @@ class StartWorkoutContent extends StatelessWidget {
         child: BlocBuilder<StartWorkoutBloc, StartWorkoutState>(
           builder: (context, state) {
             return Row(
-              children: [
+              children: const [
                 Image(image: AssetImage(PathConstants.back)),
-                const SizedBox(width: 17),
+                SizedBox(width: 17),
                 Text(
                   TextConstants.back,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
@@ -99,11 +98,11 @@ class StartWorkoutContent extends StatelessWidget {
   }
 
   Widget _createTitle() {
-    return Text(exercise.title, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold));
+    return Text(exercise.title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold));
   }
 
   Widget _createDescription() {
-    return Text(exercise.description, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500));
+    return Text(exercise.description, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500));
   }
 
   Widget _createSteps() {
@@ -128,7 +127,7 @@ class StartWorkoutContent extends StatelessWidget {
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       TextConstants.nextExercise,
                       style: TextStyle(
                         color: ColorConstants.grey,
@@ -139,14 +138,14 @@ class StartWorkoutContent extends StatelessWidget {
                     const SizedBox(width: 5),
                     Text(
                       nextExercise?.title ?? "",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: ColorConstants.textBlack,
                         fontSize: 17,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     const SizedBox(width: 6.5),
-                    Icon(Icons.access_time, size: 20),
+                    const Icon(Icons.access_time, size: 20),
                     const SizedBox(width: 6.5),
                     Text('00:${nextExercise!.minutes > 10 ? nextExercise!.minutes : '0${nextExercise!.minutes}'}')
                     // BlocBuilder<StartWorkoutBloc, StartWorkoutState>(
@@ -160,7 +159,7 @@ class StartWorkoutContent extends StatelessWidget {
                     // ),
                   ],
                 )
-              : SizedBox.shrink(),
+              : const SizedBox.shrink(),
           const SizedBox(height: 18),
           _createButton(context),
         ],
@@ -200,7 +199,7 @@ class Step extends StatelessWidget {
   final String number;
   final String description;
 
-  Step({required this.number, required this.description});
+  const Step({required this.number, required this.description});
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -212,7 +211,7 @@ class Step extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             color: ColorConstants.primaryColor.withOpacity(0.12),
           ),
-          child: Center(child: Text(number, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: ColorConstants.primaryColor))),
+          child: Center(child: Text(number, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: ColorConstants.primaryColor))),
         ),
         const SizedBox(width: 10),
         Expanded(child: Text(description)),

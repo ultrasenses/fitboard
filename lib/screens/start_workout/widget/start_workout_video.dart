@@ -13,7 +13,7 @@ class StartWorkoutVideo extends StatefulWidget {
   final Function(int) onPlayTapped;
   final Function(int) onPauseTapped;
 
-  StartWorkoutVideo({
+  const StartWorkoutVideo({
     required this.exercise,
     required this.onPlayTapped,
     required this.onPauseTapped,
@@ -43,7 +43,7 @@ class _StartWorkoutVideoState extends State<StartWorkoutVideo> {
         autoPlay: false,
         deviceOrientationsAfterFullScreen: [DeviceOrientation.portraitUp],
         aspectRatio: 15 / 10,
-        placeholder: Center(child: CupertinoActivityIndicator()),
+        placeholder: const Center(child: CupertinoActivityIndicator()),
         materialProgressColors: ChewieProgressColors(playedColor: ColorConstants.primaryColor));
     super.initState();
   }

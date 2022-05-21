@@ -18,7 +18,7 @@ class WorkoutsPage extends StatelessWidget {
       child: BlocConsumer<WorkoutsBloc, WorkoutsState>(
         buildWhen: (_, currState) => currState is WorkoutsInitial,
         builder: (context, state) {
-          return WorkoutContent();
+          return const WorkoutContent();
         },
         listenWhen: (_, currState) => currState is CardTappedState,
         listener: (context, state) {

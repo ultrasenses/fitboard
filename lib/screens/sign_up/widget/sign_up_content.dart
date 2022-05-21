@@ -7,10 +7,11 @@ import 'package:ultrasenses_fitboard/screens/common_widgets/fitness_text_field.d
 import 'package:ultrasenses_fitboard/screens/sign_up/bloc/signup_bloc.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpContent extends StatelessWidget {
+  const SignUpContent({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -30,9 +31,9 @@ class SignUpContent extends StatelessWidget {
                 if (state is LoadingState) {
                   return _createLoading();
                 } else if (state is NextTabBarPageState || state is ErrorState) {
-                  return SizedBox();
+                  return const SizedBox();
                 }
-                return SizedBox();
+                return const SizedBox();
               },
             ),
           ],
@@ -67,7 +68,7 @@ class SignUpContent extends StatelessWidget {
   }
 
   Widget _createTitle() {
-    return Text(
+    return const Text(
       TextConstants.signUp,
       style: TextStyle(
         color: ColorConstants.textBlack,
@@ -164,14 +165,14 @@ class SignUpContent extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: TextConstants.alreadyHaveAccount,
-        style: TextStyle(
+        style: const TextStyle(
           color: ColorConstants.textBlack,
           fontSize: 18,
         ),
         children: [
           TextSpan(
             text: " ${TextConstants.signIn}",
-            style: TextStyle(
+            style: const TextStyle(
               color: ColorConstants.primaryColor,
               fontSize: 18,
               fontWeight: FontWeight.bold,

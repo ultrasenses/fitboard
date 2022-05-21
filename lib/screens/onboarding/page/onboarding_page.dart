@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OnboardingPage extends StatelessWidget {
+  const OnboardingPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,14 +23,14 @@ class OnboardingPage extends StatelessWidget {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (_) {
-                return SignUpPage();
+                return const SignUpPage();
               },
             ),
           );
         },
         buildWhen: (_, currState) => currState is OnboardingInitial,
         builder: (context, state) {
-          return OnboardingContent();
+          return const OnboardingContent();
         },
       ),
     );

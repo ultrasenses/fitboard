@@ -6,7 +6,7 @@ class FitnessButton extends StatelessWidget {
   final bool isEnabled;
   final Function() onTap;
 
-  FitnessButton({required this.title, this.isEnabled = true, required this.onTap});
+  const FitnessButton({required this.title, this.isEnabled = true, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class FitnessButton extends StatelessWidget {
           child: Center(
             child: Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 color: ColorConstants.white,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,

@@ -3,7 +3,6 @@ import 'package:ultrasenses_fitboard/core/const/data_constants.dart';
 import 'package:ultrasenses_fitboard/core/const/text_constants.dart';
 import 'package:ultrasenses_fitboard/screens/reminder/bloc/reminder_bloc.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ReminderContent extends StatelessWidget {
@@ -42,7 +41,7 @@ class ReminderContent extends StatelessWidget {
   }
 
   Widget _createSelectTime() {
-    return Text(
+    return const Text(
       TextConstants.selectTime,
       style: TextStyle(
         fontSize: 18,
@@ -53,7 +52,7 @@ class ReminderContent extends StatelessWidget {
 
   Widget _createTimePicker(BuildContext context) {
     final bloc = BlocProvider.of<ReminderBloc>(context);
-    return Container(
+    return SizedBox(
       height: 250,
       child: CupertinoDatePicker(
         mode: CupertinoDatePickerMode.time,
@@ -65,7 +64,7 @@ class ReminderContent extends StatelessWidget {
   }
 
   Widget _createRepeating() {
-    return Text(TextConstants.repeating,
+    return const Text(TextConstants.repeating,
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600));
   }
 
@@ -100,7 +99,7 @@ class RepeatingDay extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onTap;
 
-  RepeatingDay({
+  const RepeatingDay({
     required this.title,
     required this.isSelected,
     required this.onTap,

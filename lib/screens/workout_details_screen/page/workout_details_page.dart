@@ -11,7 +11,7 @@ import 'package:ultrasenses_fitboard/core/extensions/list_extension.dart';
 
 class WorkoutDetailsPage extends StatelessWidget {
   final WorkoutData workout;
-  WorkoutDetailsPage({required this.workout});
+  const WorkoutDetailsPage({required this.workout});
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +27,12 @@ class WorkoutDetailsPage extends StatelessWidget {
           return Scaffold(
               floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
               floatingActionButton: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: FitnessButton(
                   title: TextConstants.start,
                   onTap: () {
                     ExerciseData? exercise = workout.exerciseDataList.firstWhereOrNull((element) => element.progress < 1);
-                    if (exercise == null) exercise = workout.exerciseDataList.first;
+                    exercise ??= workout.exerciseDataList.first;
                     int exerciseIndex = workout.exerciseDataList.indexOf(exercise);
                     Navigator.of(context).push(
                       MaterialPageRoute(

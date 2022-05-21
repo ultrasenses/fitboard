@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FitnessLoading extends StatelessWidget {
+  const FitnessLoading({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,8 +15,9 @@ class FitnessLoading extends StatelessWidget {
         child: Theme(
           data: ThemeData(
             cupertinoOverrideTheme:
-                CupertinoThemeData(brightness: Brightness.dark),
+                const CupertinoThemeData(brightness: Brightness.dark),
           ),
+          // ignore: prefer_const_constructors
           child: CupertinoActivityIndicator(
             radius: 17,
           ),

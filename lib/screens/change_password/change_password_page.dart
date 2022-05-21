@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
-  ChangePasswordScreen({Key? key}) : super(key: key);
+  const ChangePasswordScreen({Key? key}) : super(key: key);
 
   @override
   _ChangePasswordScreenState createState() => _ChangePasswordScreenState();
@@ -36,14 +36,14 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     return Scaffold(
         body: _buildContext(context),
         appBar: AppBar(
-            title: Text(TextConstants.changePassword, style: TextStyle(color: Colors.black, fontSize: 18)),
+            title: const Text(TextConstants.changePassword, style: TextStyle(color: Colors.black, fontSize: 18)),
             backgroundColor: Colors.transparent,
             elevation: 0,
             leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new),
+              icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () => Navigator.of(context).pop(),
             ),
-            iconTheme: IconThemeData(
+            iconTheme: const IconThemeData(
               color: ColorConstants.primaryColor,
             )));
   }
@@ -55,7 +55,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         buildWhen: (_, currState) =>
             currState is ChangePasswordInitial || currState is ChangePasswordError || currState is ChangePasswordProgress || currState is ChangePasswordSuccess,
         builder: (context, state) {
-          if (state is ChangePasswordProgress) return Stack(children: [_editAccountContent(context), FitnessLoading()]);
+          if (state is ChangePasswordProgress) return Stack(children: [_editAccountContent(context), const FitnessLoading()]);
           if (state is ChangePasswordError) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.error)));
@@ -75,17 +75,17 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   }
 
   Widget _editAccountContent(BuildContext context) {
-    ChangePasswordBloc _bloc = BlocProvider.of<ChangePasswordBloc>(context);
+    ChangePasswordBloc bloc = BlocProvider.of<ChangePasswordBloc>(context);
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+          padding: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
           child: SizedBox(
             height: height - 140 - MediaQuery.of(context).padding.bottom,
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              SizedBox(height: 15),
-              Text(TextConstants.newPassword, style: TextStyle(fontWeight: FontWeight.w600)),
+              const SizedBox(height: 15),
+              const Text(TextConstants.newPassword, style: TextStyle(fontWeight: FontWeight.w600)),
               SettingsContainer(
                 child: SettingsTextField(
                   controller: _newPassController,
@@ -93,9 +93,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   placeHolder: TextConstants.passwordPlaceholder,
                 ),
               ),
-              if (isNewPassInvalid) Text(TextConstants.passwordErrorText, style: TextStyle(color: ColorConstants.errorColor)),
-              SizedBox(height: 10),
-              Text(TextConstants.confirmPassword, style: TextStyle(fontWeight: FontWeight.w600)),
+              if (isNewPassInvalid) const Text(TextConstants.passwordErrorText, style: TextStyle(color: ColorConstants.errorColor)),
+              const SizedBox(height: 10),
+              const Text(TextConstants.confirmPassword, style: TextStyle(fontWeight: FontWeight.w600)),
               SettingsContainer(
                 child: SettingsTextField(
                   controller: _confirmPassController,
@@ -103,8 +103,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   placeHolder: TextConstants.confirmPasswordPlaceholder,
                 ),
               ),
-              if (isConfirmPassInvalid) Text(TextConstants.confirmPasswordErrorText, style: TextStyle(color: ColorConstants.errorColor)),
-              Spacer(),
+              if (isConfirmPassInvalid) const Text(TextConstants.confirmPasswordErrorText, style: TextStyle(color: ColorConstants.errorColor)),
+              const Spacer(),
               FitnessButton(
                 title: TextConstants.save,
                 isEnabled: true,
@@ -115,7 +115,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     isConfirmPassInvalid = _newPassController.text != _confirmPassController.text;
                   });
                   if (!(isNewPassInvalid || isConfirmPassInvalid)) {
-                    _bloc.add(ChangePassword(newPass: _newPassController.text));
+                    bloc.add(ChangePassword(newPass: _newPassController.text));
                   }
                 },
               ),

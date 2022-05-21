@@ -7,7 +7,7 @@ class WorkoutCard extends StatelessWidget {
   final WorkoutData workout;
   final Function() onTap;
 
-  WorkoutCard({
+  const WorkoutCard({
     required this.color,
     required this.workout,
     required this.onTap,
@@ -40,7 +40,7 @@ class WorkoutCard extends StatelessWidget {
                     const SizedBox(height: 5),
                     Text(
                       workout.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: ColorConstants.white,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -49,7 +49,7 @@ class WorkoutCard extends StatelessWidget {
                     const SizedBox(height: 10),
                     Text(
                       "${workout.exercices} exercises",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: ColorConstants.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -58,7 +58,7 @@ class WorkoutCard extends StatelessWidget {
                     const SizedBox(height: 5),
                     Text(
                       "${workout.minutes} minutes",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: ColorConstants.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,

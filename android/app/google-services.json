@@ -29,6 +29,13 @@
             {
               "client_id": "449309392245-v71brqg4u7ufr16jfrai1egpvh3ll275.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "449309392245-k7oqqqbclju32sen2orsanej520mpedl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ultrasensesFitboard"
+              }
             }
           ]
         }

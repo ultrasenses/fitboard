@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class WorkoutDetailsPanel extends StatelessWidget {
   final WorkoutData workout;
 
-  WorkoutDetailsPanel({required this.workout});
+  const WorkoutDetailsPanel({required this.workout});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class WorkoutDetailsPanel extends StatelessWidget {
               _createHeader(),
               const SizedBox(height: 20),
               _createWorkoutData(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               _createExerciesList(),
             ],
           ),
@@ -38,15 +38,15 @@ class WorkoutDetailsPanel extends StatelessWidget {
   }
 
   Widget _createRectangle() {
-    return Image(image: AssetImage(PathConstants.rectangle));
+    return const Image(image: AssetImage(PathConstants.rectangle));
   }
 
   Widget _createHeader() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
-        workout.title + "  " + TextConstants.workout,
-        style: TextStyle(
+        "${workout.title}  ${TextConstants.workout}",
+        style: const TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),

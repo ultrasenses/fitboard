@@ -38,21 +38,21 @@ class TabBarPage extends StatelessWidget {
       items: [
         BottomNavigationBarItem(
           icon: Image(
-            image: AssetImage(PathConstants.home),
+            image: const AssetImage(PathConstants.home),
             color: bloc.currentIndex == 0 ? ColorConstants.primaryColor : null,
           ),
           label: TextConstants.homeIcon,
         ),
         BottomNavigationBarItem(
           icon: Image(
-            image: AssetImage(PathConstants.workouts),
+            image: const AssetImage(PathConstants.workouts),
             color: bloc.currentIndex == 1 ? ColorConstants.primaryColor : null,
           ),
           label: TextConstants.workoutsIcon,
         ),
         BottomNavigationBarItem(
           icon: Image(
-            image: AssetImage(PathConstants.settings),
+            image: const AssetImage(PathConstants.settings),
             color: bloc.currentIndex == 2 ? ColorConstants.primaryColor : null,
           ),
           label: TextConstants.settingsIcon,
@@ -66,9 +66,9 @@ class TabBarPage extends StatelessWidget {
 
   Widget _createBody(BuildContext context, int index) {
     final children = [
-      HomePage(),
-      WorkoutsPage(),
-      SettingsScreen()
+      const HomePage(),
+      const WorkoutsPage(),
+      const SettingsScreen()
       // Scaffold(
       //   body: Center(
       //     child: RawMaterialButton(

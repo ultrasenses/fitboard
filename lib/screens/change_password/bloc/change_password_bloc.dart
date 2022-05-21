@@ -20,11 +20,11 @@ class ChangePasswordBloc extends Bloc<ChangePasswordEvent, ChangePasswordState> 
       try {
         await UserService.changePassword(newPass: event.newPass);
         yield ChangePasswordSuccess(message: TextConstants.passwordUpdated);
-        await Future.delayed(Duration(seconds: 1));
+        await Future.delayed(const Duration(seconds: 1));
         yield ChangePasswordInitial();
       } catch (e) {
         yield ChangePasswordError(e.toString());
-        await Future.delayed(Duration(seconds: 1));
+        await Future.delayed(const Duration(seconds: 1));
         yield ChangePasswordInitial();
       }
     }

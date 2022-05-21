@@ -5,7 +5,7 @@ import 'package:ultrasenses_fitboard/screens/workouts/widget/workout_card.dart';
 import 'package:flutter/material.dart';
 
 class WorkoutContent extends StatelessWidget {
-  WorkoutContent({Key? key}) : super(key: key);
+  const WorkoutContent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +23,8 @@ class WorkoutContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text('Workouts',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           ),

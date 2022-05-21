@@ -34,11 +34,11 @@ class _ForgotPasswordContentState extends State<ForgotPasswordContent> {
               if (state is ForgotPasswordLoading) {
                 return _createLoading();
               } else if (state is ForgotPasswordSuccess) {
-                return SizedBox();
+                return const SizedBox();
               } else if (state is ForgotPasswordError) {
-                return SizedBox();
+                return const SizedBox();
               }
-              return SizedBox();
+              return const SizedBox();
             },
           ),
         ],
@@ -58,9 +58,9 @@ class _ForgotPasswordContentState extends State<ForgotPasswordContent> {
           height: height - 30 - MediaQuery.of(context).padding.bottom - kToolbarHeight,
           child: Column(
             children: [
-              Spacer(flex: 2),
+              const Spacer(flex: 2),
               _createForm(context),
-              Spacer(flex: 3),
+              const Spacer(flex: 3),
               _createResetPasswordButton(context),
               const SizedBox(height: 30),
             ],
@@ -83,7 +83,7 @@ class _ForgotPasswordContentState extends State<ForgotPasswordContent> {
           isError: _isTextFieldError,
           onTextChanged: () {
             setState(() {
-              _isButtonEnabled = bloc.emailController.text.length > 0;
+              _isButtonEnabled = bloc.emailController.text.isNotEmpty;
             });
           },
         );

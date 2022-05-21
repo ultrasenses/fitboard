@@ -6,7 +6,7 @@ class StartWorkoutTimer extends StatefulWidget {
   final int time;
   final bool isPaused;
 
-  StartWorkoutTimer({
+  const StartWorkoutTimer({
     required this.time,
     required this.isPaused,
   });
@@ -26,12 +26,12 @@ class _StartWorkoutTimerState extends State<StartWorkoutTimer> {
   Widget _createCountdownTimer() {
     return CustomTimer(
       begin: Duration(seconds: widget.time),
-      end: Duration(seconds: 0),
+      end: const Duration(seconds: 0),
       controller: _controller,
       builder: (CustomTimerRemainingTime remaining) {
         return Text(
           "${remaining.minutes}:${remaining.seconds}",
-          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+          style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
         );
       },
     );
@@ -41,7 +41,7 @@ class _StartWorkoutTimerState extends State<StartWorkoutTimer> {
     final minutesSeconds = DateService.convertIntoSeconds(widget.time);
     return Text(
       "${minutesSeconds.minutes.toString().padLeft(2, '0')}:${minutesSeconds.seconds.toString().padLeft(2, '0')}",
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 17,
         fontWeight: FontWeight.w600,
       ),

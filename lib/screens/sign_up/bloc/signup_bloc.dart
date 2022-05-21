@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ultrasenses_fitboard/core/service/auth_service.dart';
 import 'package:ultrasenses_fitboard/core/service/validation_service.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 part 'signup_event.dart';
 part 'signup_state.dart';

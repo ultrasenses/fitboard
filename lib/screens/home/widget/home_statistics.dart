@@ -86,14 +86,14 @@ class HomeStatistics extends StatelessWidget {
 
   Widget _createColumnStatistics() {
     return Column(
-      children: [
+      children: const [
         DataWorkouts(
           icon: PathConstants.inProgress,
           title: TextConstants.inProgress,
           count: 2,
           text: TextConstants.workouts,
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: 20),
         DataWorkouts(
           icon: PathConstants.timeSent,
           title: TextConstants.timeSent,
@@ -111,7 +111,7 @@ class DataWorkouts extends StatelessWidget {
   final int count;
   final String text;
 
-  DataWorkouts({
+  const DataWorkouts({
     required this.icon,
     required this.title,
     required this.count,

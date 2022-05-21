@@ -16,7 +16,7 @@ class ExercisesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: EdgeInsets.only(top: 10),
+      padding: const EdgeInsets.only(top: 10),
       itemCount: exercises.length,
       itemBuilder: (context, index) {
         return ExerciseCell(
@@ -111,7 +111,7 @@ class ExerciseCell extends StatelessWidget {
       children: [
         Text(
           currentExercise.title,
-          style: TextStyle(
+          style: const TextStyle(
             color: ColorConstants.textColor,
             fontSize: 16,
             fontWeight: FontWeight.w700,
@@ -119,7 +119,7 @@ class ExerciseCell extends StatelessWidget {
         ),
         Text(
           minutesStr,
-          style: TextStyle(
+          style: const TextStyle(
             color: ColorConstants.textBlack,
             fontSize: 14,
             fontWeight: FontWeight.w400,
@@ -141,7 +141,7 @@ class ExerciseCell extends StatelessWidget {
   }
 
   Widget _createRightArrow() {
-    return RotatedBox(
+    return const RotatedBox(
       quarterTurns: 2,
       child: Image(
         image: AssetImage(PathConstants.back),

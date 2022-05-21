@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpPage extends StatelessWidget {
+  const SignUpPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: _buildBody(context));
@@ -18,9 +20,9 @@ class SignUpPage extends StatelessWidget {
         listenWhen: (_, currState) => currState is NextTabBarPageState || currState is NextSignInPageState || currState is ErrorState,
         listener: (context, state) {
           if (state is NextTabBarPageState) {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => TabBarPage()));
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const TabBarPage()));
           } else if (state is NextSignInPageState) {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => SignInPage()));
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const SignInPage()));
           } else if (state is ErrorState) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(state.message)),
@@ -29,7 +31,7 @@ class SignUpPage extends StatelessWidget {
         },
         buildWhen: (_, currState) => currState is SignupInitial,
         builder: (context, state) {
-          return SignUpContent();
+          return const SignUpContent();
         },
       ),
     );

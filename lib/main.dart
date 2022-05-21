@@ -5,7 +5,6 @@ import 'package:ultrasenses_fitboard/core/service/notification_service.dart';
 import 'package:ultrasenses_fitboard/screens/onboarding/page/onboarding_page.dart';
 import 'package:ultrasenses_fitboard/screens/tab_bar/page/tab_bar_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'firebase_options.dart';
@@ -16,16 +15,18 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
-  _MyAppState createState() => new _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  static late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+  static FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       NotificationService.flutterLocalNotificationsPlugin;
 
   @override
@@ -33,9 +34,9 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('app_icon');
-    final IOSInitializationSettings initializationSettingsIOS =
+    const IOSInitializationSettings initializationSettingsIOS =
         IOSInitializationSettings();
-    final InitializationSettings initializationSettings =
+    const InitializationSettings initializationSettings =
         InitializationSettings(
             android: initializationSettingsAndroid,
             iOS: initializationSettingsIOS);
@@ -54,12 +55,12 @@ class _MyAppState extends State<MyApp> {
       title: 'Fitboard',
       theme: ThemeData(
         textTheme:
-            TextTheme(bodyText1: TextStyle(color: ColorConstants.textColor)),
+            const TextTheme(bodyText1: TextStyle(color: ColorConstants.textColor)),
         fontFamily: 'NotoSansKR',
         scaffoldBackgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: isLoggedIn ? TabBarPage() : OnboardingPage(),
+      home: isLoggedIn ? const TabBarPage() : const OnboardingPage(),
     );
   }
 
@@ -67,8 +68,8 @@ class _MyAppState extends State<MyApp> {
     showDialog(
       context: context,
       builder: (_) {
-        return new AlertDialog(
-          title: Text("PayLoad"),
+        return AlertDialog(
+          title: const Text("PayLoad"),
           content: Text("Payload : $payload"),
         );
       },

@@ -38,7 +38,7 @@ class _SettingsTextFieldState extends State<SettingsTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,10 +66,10 @@ class _SettingsTextFieldState extends State<SettingsTextField> {
       focusNode: focusNode,
       controller: widget.controller,
       obscureText: stateObscureText,
-      style: TextStyle(fontWeight: FontWeight.w600),
+      style: const TextStyle(fontWeight: FontWeight.w600),
       decoration: InputDecoration(
         hintText: widget.placeHolder,
-        hintStyle: TextStyle(color: ColorConstants.grey, fontSize: 16),
+        hintStyle: const TextStyle(color: ColorConstants.grey, fontSize: 16),
         border: InputBorder.none,
         focusedBorder: InputBorder.none,
         enabledBorder: InputBorder.none,
@@ -87,7 +87,7 @@ class _SettingsTextFieldState extends State<SettingsTextField> {
         });
       },
       child: Image(
-        image: AssetImage(
+        image: const AssetImage(
           PathConstants.eye,
         ),
         color: widget.controller.text.isNotEmpty

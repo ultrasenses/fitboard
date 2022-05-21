@@ -34,7 +34,7 @@ class HomeContent extends StatelessWidget {
         children: [
           _createProfileData(context),
           const SizedBox(height: 35),
-          HomeStatistics(),
+          const HomeStatistics(),
           const SizedBox(height: 30),
           _createExercisesList(context),
           const SizedBox(height: 25),
@@ -48,8 +48,8 @@ class HomeContent extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             TextConstants.discoverWorkouts,
             style: TextStyle(
@@ -60,7 +60,7 @@ class HomeContent extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 15),
-        Container(
+        SizedBox(
           height: 160,
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -102,13 +102,13 @@ class HomeContent extends StatelessWidget {
             children: [
               Text(
                 'Hi, $displayName',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 2),
-              Text(
+              const Text(
                 TextConstants.checkActivity,
                 style: TextStyle(
                   fontSize: 18,
@@ -121,24 +121,24 @@ class HomeContent extends StatelessWidget {
             buildWhen: (_, currState) => currState is ReloadImageState,
             builder: (context, state) {
               final photoUrl =
-                  FirebaseAuth.instance.currentUser?.photoURL ?? null;
+                  FirebaseAuth.instance.currentUser?.photoURL;
               return GestureDetector(
                 child: photoUrl == null
-                    ? CircleAvatar(
+                    ? const CircleAvatar(
                         backgroundImage: AssetImage(PathConstants.profile),
                         radius: 60)
                     : CircleAvatar(
+                        radius: 25,
                         child: ClipOval(
                             child: FadeInImage.assetNetwork(
                                 placeholder: PathConstants.profile,
                                 image: photoUrl,
                                 fit: BoxFit.cover,
                                 width: 200,
-                                height: 120)),
-                        radius: 25),
+                                height: 120))),
                 onTap: () async {
                   await Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => EditAccountScreen()));
+                      MaterialPageRoute(builder: (_) => const EditAccountScreen()));
                   BlocProvider.of<HomeBloc>(context).add(ReloadImageEvent());
                 },
               );
@@ -167,16 +167,16 @@ class HomeContent extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Image(
+          const Image(
             image: AssetImage(
               PathConstants.progress,
             ),
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text(
                   TextConstants.keepProgress,
                   style: TextStyle(
@@ -184,7 +184,7 @@ class HomeContent extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 3),
+                SizedBox(height: 3),
                 Text(
                   TextConstants.profileSuccessful,
                   style: TextStyle(

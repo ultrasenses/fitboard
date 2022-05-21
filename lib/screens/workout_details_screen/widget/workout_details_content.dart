@@ -27,7 +27,7 @@ class WorkoutDetailsContent extends StatelessWidget {
       minHeight: MediaQuery.of(context).size.height * 0.65,
       maxHeight: MediaQuery.of(context).size.height * 0.87,
       isDraggable: true,
-      borderRadius: BorderRadius.only(
+      borderRadius: const BorderRadius.only(
         topLeft: Radius.circular(50),
         topRight: Radius.circular(50),
       ),

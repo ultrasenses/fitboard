@@ -1,7 +1,6 @@
 import 'package:ultrasenses_fitboard/core/const/color_constants.dart';
 import 'package:ultrasenses_fitboard/core/const/path_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class FitnessTextField extends StatefulWidget {
   final String title;
@@ -126,7 +125,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
       obscureText: stateObscureText,
       textInputAction: widget.textInputAction,
       keyboardType: widget.keyboardType,
-      style: TextStyle(
+      style: const TextStyle(
         color: ColorConstants.textBlack,
         fontSize: 16,
       ),
@@ -139,12 +138,12 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: ColorConstants.primaryColor,
           ),
         ),
         hintText: widget.placeholder,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: ColorConstants.grey,
           fontSize: 16,
         ),
@@ -166,7 +165,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
         });
       },
       child: Image(
-        image: AssetImage(
+        image: const AssetImage(
           PathConstants.eye,
         ),
         color: widget.controller.text.isNotEmpty ? ColorConstants.primaryColor : ColorConstants.grey,
@@ -179,7 +178,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
       padding: const EdgeInsets.only(top: 2),
       child: Text(
         widget.errorText,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 14,
           color: ColorConstants.errorColor,
         ),

@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
       child: BlocConsumer<HomeBloc, HomeState>(
         buildWhen: (_, currState) => currState is HomeInitial,
         builder: (context, state) {
-          return HomeContent();
+          return const HomeContent();
         },
         listenWhen: (_, currState) => true,
         listener: (context, state) {},
