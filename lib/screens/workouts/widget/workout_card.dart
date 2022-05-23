@@ -18,9 +18,8 @@ class WorkoutCard extends StatelessWidget {
       height: 140,
       margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: ColorConstants.white,
-        boxShadow: [BoxShadow(color: ColorConstants.textBlack.withOpacity(0.12), blurRadius: 5.0, spreadRadius: 1.1)],
+        borderRadius: BorderRadius.circular(20),
+        color: ColorConstants.darkModeCardColor,
       ),
       child: Material(
         color: Colors.transparent,
@@ -43,7 +42,7 @@ class WorkoutCard extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(workout.title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                          Text(workout.title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: ColorConstants.textWhite)),
                           const SizedBox(height: 3),
                           Text("${workout.exercices} ${TextConstants.exercisesUppercase}",
                               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: ColorConstants.grey),
@@ -55,7 +54,7 @@ class WorkoutCard extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2),
                           const Spacer(),
-                          Text('${workout.currentProgress}/${workout.progress}', style: const TextStyle(fontSize: 10)),
+                          Text('${workout.currentProgress}/${workout.progress}', style: const TextStyle(fontSize: 10, color: ColorConstants.textWhite)),
                           const SizedBox(height: 3),
                           Padding(
                             padding: const EdgeInsets.only(right: 30.0, left: 2),

@@ -10,7 +10,7 @@ class WorkoutContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ColorConstants.homeBackgroundColor,
+      color: ColorConstants.darkModeBackgroundColor,
       height: double.infinity,
       width: double.infinity,
       child: _createHomeBody(context),
@@ -25,8 +25,8 @@ class WorkoutContent extends StatelessWidget {
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text('Workouts',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            child: Text('My training',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: ColorConstants.textWhite)),
           ),
           const SizedBox(height: 5),
           Expanded(

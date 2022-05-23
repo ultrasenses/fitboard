@@ -74,7 +74,7 @@ class SignInContent extends StatelessWidget {
       child: Text(
         TextConstants.signIn,
         style: TextStyle(
-          color: ColorConstants.textBlack,
+          color: ColorConstants.textWhite,
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
@@ -168,7 +168,7 @@ class SignInContent extends StatelessWidget {
         text: TextSpan(
           text: TextConstants.doNotHaveAnAccount,
           style: const TextStyle(
-            color: ColorConstants.textBlack,
+            color: ColorConstants.textWhite,
             fontSize: 18,
           ),
           children: [

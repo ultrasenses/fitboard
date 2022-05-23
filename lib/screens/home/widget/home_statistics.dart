@@ -27,15 +27,8 @@ class HomeStatistics extends StatelessWidget {
       height: 200,
       width: screenWidth * 0.35,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: ColorConstants.white,
-        boxShadow: [
-          BoxShadow(
-            color: ColorConstants.textBlack.withOpacity(0.12),
-            blurRadius: 5.0,
-            spreadRadius: 1.1,
-          ),
-        ],
+        borderRadius: BorderRadius.circular(20),
+        color: ColorConstants.darkModeCardColor,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -52,7 +45,7 @@ class HomeStatistics extends StatelessWidget {
                 child: Text(
                   TextConstants.finished,
                   style: TextStyle(
-                    color: ColorConstants.textBlack,
+                    color: ColorConstants.textWhite,
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
@@ -67,7 +60,7 @@ class HomeStatistics extends StatelessWidget {
             style: TextStyle(
               fontSize: 48,
               fontWeight: FontWeight.w700,
-              color: ColorConstants.textBlack,
+              color: ColorConstants.textWhite,
             ),
           ),
           const Text(
@@ -126,15 +119,8 @@ class DataWorkouts extends StatelessWidget {
       height: 90,
       width: screenWidth * 0.5,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: ColorConstants.white,
-        boxShadow: [
-          BoxShadow(
-            color: ColorConstants.textBlack.withOpacity(0.12),
-            blurRadius: 5.0,
-            spreadRadius: 1.1,
-          ),
-        ],
+        borderRadius: BorderRadius.circular(20),
+        color: ColorConstants.darkModeCardColor,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -148,7 +134,7 @@ class DataWorkouts extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
-                  color: ColorConstants.textBlack,
+                  color: ColorConstants.textWhite,
                 ),
               ),
             ],
@@ -160,7 +146,7 @@ class DataWorkouts extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w700,
-                  color: ColorConstants.textBlack,
+                  color: ColorConstants.textWhite,
                 ),
               ),
               const SizedBox(width: 10),

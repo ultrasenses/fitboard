@@ -20,7 +20,7 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ColorConstants.homeBackgroundColor,
+      color: ColorConstants.darkModeBackgroundColor,
       height: double.infinity,
       width: double.infinity,
       child: _createHomeBody(context),
@@ -53,7 +53,7 @@ class HomeContent extends StatelessWidget {
           child: Text(
             TextConstants.discoverWorkouts,
             style: TextStyle(
-              color: ColorConstants.textBlack,
+              color: ColorConstants.textWhite,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -103,6 +103,7 @@ class HomeContent extends StatelessWidget {
               Text(
                 'Hi, $displayName',
                 style: const TextStyle(
+                  color: ColorConstants.textWhite,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
@@ -111,6 +112,7 @@ class HomeContent extends StatelessWidget {
               const Text(
                 TextConstants.checkActivity,
                 style: TextStyle(
+                  color: ColorConstants.textWhite,
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
@@ -155,15 +157,8 @@ class HomeContent extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: ColorConstants.white,
-        boxShadow: [
-          BoxShadow(
-            color: ColorConstants.textBlack.withOpacity(0.12),
-            blurRadius: 5.0,
-            spreadRadius: 1.1,
-          ),
-        ],
+        borderRadius: BorderRadius.circular(20),
+        color: ColorConstants.darkModeCardColor,
       ),
       child: Row(
         children: [
@@ -180,6 +175,7 @@ class HomeContent extends StatelessWidget {
                 Text(
                   TextConstants.keepProgress,
                   style: TextStyle(
+                    color: ColorConstants.textWhite,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -188,6 +184,7 @@ class HomeContent extends StatelessWidget {
                 Text(
                   TextConstants.profileSuccessful,
                   style: TextStyle(
+                    color: ColorConstants.textWhite,
                     fontSize: 16,
                   ),
                   overflow: TextOverflow.ellipsis,

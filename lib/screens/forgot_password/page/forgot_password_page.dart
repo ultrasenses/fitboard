@@ -12,7 +12,7 @@ class ForgotPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text(TextConstants.passwordReset, style: TextStyle(color: Colors.black, fontSize: 18)),
+          title: const Text(TextConstants.passwordReset, style: TextStyle(color: ColorConstants.textWhite, fontSize: 18)),
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: IconButton(

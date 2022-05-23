@@ -139,7 +139,7 @@ class StartWorkoutContent extends StatelessWidget {
                     Text(
                       nextExercise?.title ?? "",
                       style: const TextStyle(
-                        color: ColorConstants.textBlack,
+                        color: ColorConstants.textWhite,
                         fontSize: 17,
                         fontWeight: FontWeight.w600,
                       ),

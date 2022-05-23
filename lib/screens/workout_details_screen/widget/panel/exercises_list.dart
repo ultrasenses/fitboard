@@ -67,7 +67,7 @@ class ExerciseCell extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                  color: ColorConstants.textBlack.withOpacity(0.12),
+                  color: ColorConstants.textWhite.withOpacity(0.12),
                   blurRadius: 5.0,
                   spreadRadius: 1.1,
                 ),
@@ -112,7 +112,7 @@ class ExerciseCell extends StatelessWidget {
         Text(
           currentExercise.title,
           style: const TextStyle(
-            color: ColorConstants.textColor,
+            color: ColorConstants.textWhite,
             fontSize: 16,
             fontWeight: FontWeight.w700,
           ),
@@ -120,7 +120,7 @@ class ExerciseCell extends StatelessWidget {
         Text(
           minutesStr,
           style: const TextStyle(
-            color: ColorConstants.textBlack,
+            color: ColorConstants.textWhite,
             fontSize: 14,
             fontWeight: FontWeight.w400,
           ),

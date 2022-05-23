@@ -18,7 +18,7 @@ class SettingsContainer extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           color: ColorConstants.white,
-          boxShadow: [BoxShadow(color: ColorConstants.textBlack.withOpacity(0.12), blurRadius: 5.0, spreadRadius: 1.1)],
+          boxShadow: [BoxShadow(color: ColorConstants.textWhite.withOpacity(0.12), blurRadius: 5.0, spreadRadius: 1.1)],
         ),
         child: Material(
           color: Colors.transparent,

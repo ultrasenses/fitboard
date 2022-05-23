@@ -49,7 +49,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
         body: _buildContext(context),
         appBar: AppBar(
             title: const Text(TextConstants.editAccount,
-                style: TextStyle(color: Colors.black, fontSize: 18)),
+                style: TextStyle(color: ColorConstants.textWhite, fontSize: 18)),
             backgroundColor: Colors.transparent,
             elevation: 0,
             leading: IconButton(

@@ -23,7 +23,7 @@ class ReminderPage extends StatelessWidget {
               titleSpacing: 0,
               title: const Text(
                 TextConstants.reminder,
-                style: TextStyle(color: Colors.black, fontSize: 18),
+                style: TextStyle(color: ColorConstants.textWhite, fontSize: 18),
               ),
               backgroundColor: Colors.transparent,
               elevation: 0,

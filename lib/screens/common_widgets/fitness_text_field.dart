@@ -97,7 +97,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
     } else if (stateIsError) {
       return ColorConstants.errorColor;
     } else if (widget.controller.text.isNotEmpty) {
-      return ColorConstants.textBlack;
+      return ColorConstants.textWhite;
     }
     return ColorConstants.grey;
   }
@@ -126,7 +126,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
       textInputAction: widget.textInputAction,
       keyboardType: widget.keyboardType,
       style: const TextStyle(
-        color: ColorConstants.textBlack,
+        color: ColorConstants.textWhite,
         fontSize: 16,
       ),
       decoration: InputDecoration(

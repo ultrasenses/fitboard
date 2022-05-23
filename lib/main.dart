@@ -54,12 +54,20 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Fitboard',
       theme: ThemeData(
-        textTheme:
-            const TextTheme(bodyText1: TextStyle(color: ColorConstants.textColor)),
+        textTheme: const TextTheme(
+            bodyText1: TextStyle(color: ColorConstants.textWhite)),
         fontFamily: 'NotoSansKR',
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: ColorConstants.lightModeBackgroundColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      darkTheme: ThemeData(
+        textTheme: const TextTheme(
+            bodyText1: TextStyle(color: ColorConstants.textBlack)),
+        fontFamily: 'NotoSansKR',
+        scaffoldBackgroundColor: ColorConstants.darkModeBackgroundColor,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      themeMode: ThemeMode.system,
       home: isLoggedIn ? const TabBarPage() : const OnboardingPage(),
     );
   }

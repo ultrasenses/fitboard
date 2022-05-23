@@ -71,7 +71,7 @@ class SignUpContent extends StatelessWidget {
     return const Text(
       TextConstants.signUp,
       style: TextStyle(
-        color: ColorConstants.textBlack,
+        color: ColorConstants.textWhite,
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
@@ -166,7 +166,7 @@ class SignUpContent extends StatelessWidget {
       text: TextSpan(
         text: TextConstants.alreadyHaveAccount,
         style: const TextStyle(
-          color: ColorConstants.textBlack,
+          color: ColorConstants.textWhite,
           fontSize: 18,
         ),
         children: [
