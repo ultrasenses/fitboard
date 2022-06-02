@@ -121,7 +121,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
               const SizedBox(height: 15),
               const Text(
                 TextConstants.fullName,
-                style: TextStyle(fontWeight: FontWeight.w600),
+                style: TextStyle(fontWeight: FontWeight.w600, color: ColorConstants.textWhite),
               ),
               SettingsContainer(
                   child: SettingsTextField(
@@ -132,7 +132,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                 const Text(TextConstants.nameShouldContain2Char,
                     style: TextStyle(color: ColorConstants.errorColor)),
               const Text(TextConstants.email,
-                  style: TextStyle(fontWeight: FontWeight.w600)),
+                  style: TextStyle(fontWeight: FontWeight.w600, color: ColorConstants.textWhite)),
               SettingsContainer(
                   child: SettingsTextField(
                 controller: _emailController,

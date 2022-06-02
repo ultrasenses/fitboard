@@ -21,7 +21,7 @@ class SignUpContent extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: double.infinity,
-        color: ColorConstants.white,
+        color: ColorConstants.darkModeBackgroundColor,
         child: Stack(
           children: [
             _createMainData(context),

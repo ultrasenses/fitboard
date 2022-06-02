@@ -13,7 +13,7 @@ class ReminderContent extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: ColorConstants.white,
+      color: ColorConstants.darkModeBackgroundColor,
       child: _createDetailedReminder(context),
     );
   }
@@ -46,6 +46,7 @@ class ReminderContent extends StatelessWidget {
       style: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w600,
+        color: ColorConstants.textWhite
       ),
     );
   }
@@ -65,7 +66,7 @@ class ReminderContent extends StatelessWidget {
 
   Widget _createRepeating() {
     return const Text(TextConstants.repeating,
-        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600));
+        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: ColorConstants.textWhite));
   }
 
   Widget _createDayRepeating(BuildContext context) {

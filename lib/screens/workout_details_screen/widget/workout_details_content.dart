@@ -15,7 +15,7 @@ class WorkoutDetailsContent extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: ColorConstants.white,
+      color: ColorConstants.darkModeBackgroundColor,
       child: _createSlidingUpPanel(context),
     );
   }
@@ -27,6 +27,7 @@ class WorkoutDetailsContent extends StatelessWidget {
       minHeight: MediaQuery.of(context).size.height * 0.65,
       maxHeight: MediaQuery.of(context).size.height * 0.87,
       isDraggable: true,
+      color: ColorConstants.darkModeBackgroundColor,
       borderRadius: const BorderRadius.only(
         topLeft: Radius.circular(50),
         topRight: Radius.circular(50),

@@ -148,7 +148,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
           fontSize: 16,
         ),
         filled: true,
-        fillColor: ColorConstants.textFieldBackground,
+        fillColor: ColorConstants.darkModeCardColor,
       ),
       onChanged: (text) {
         setState(() {});

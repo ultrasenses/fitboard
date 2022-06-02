@@ -6,7 +6,7 @@ class ColorConstants {
   static const textBlack = Color(0xFF1F2022);
   static const textGrey = Color(0xFF8F98A3);
 
-  static const textFieldBackground = Color(0xFFFBFCFF);
+  static const textFieldBackground = Color(0xFF212325);
   static const textFieldBorder = Color(0xFFB9BBC5);
 
   static const primaryColor = Color(0xFF6358E1);
@@ -15,7 +15,7 @@ class ColorConstants {
   static const grey = Color(0xFFB6BDC6);
   static const loadingBlack = Color(0x80000000);
 
-  static const disabledColor = Color(0xFFE1E1E5);
+  static const disabledColor = Color.fromARGB(255, 62, 62, 64);
   static const errorColor = Color(0xFFF25252);
 
   static const homeBackgroundColor = Color.fromRGBO(252, 252, 252, 1);

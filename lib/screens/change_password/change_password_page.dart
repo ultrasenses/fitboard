@@ -85,7 +85,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             height: height - 140 - MediaQuery.of(context).padding.bottom,
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const SizedBox(height: 15),
-              const Text(TextConstants.newPassword, style: TextStyle(fontWeight: FontWeight.w600)),
+              const Text(TextConstants.newPassword, style: TextStyle(fontWeight: FontWeight.w600, color: ColorConstants.textWhite)),
               SettingsContainer(
                 child: SettingsTextField(
                   controller: _newPassController,
@@ -95,7 +95,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               ),
               if (isNewPassInvalid) const Text(TextConstants.passwordErrorText, style: TextStyle(color: ColorConstants.errorColor)),
               const SizedBox(height: 10),
-              const Text(TextConstants.confirmPassword, style: TextStyle(fontWeight: FontWeight.w600)),
+              const Text(TextConstants.confirmPassword, style: TextStyle(fontWeight: FontWeight.w600, color: ColorConstants.textWhite)),
               SettingsContainer(
                 child: SettingsTextField(
                   controller: _confirmPassController,

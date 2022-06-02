@@ -6,7 +6,8 @@ import 'package:ultrasenses_fitboard/screens/common_widgets/fitness_button.dart'
 import 'package:ultrasenses_fitboard/screens/start_workout/bloc/start_workout_bloc.dart';
 import 'package:ultrasenses_fitboard/screens/start_workout/page/start_workout_page.dart';
 import 'package:ultrasenses_fitboard/screens/start_workout/widget/start_workout_video.dart';
-import 'package:ultrasenses_fitboard/screens/workout_details_screen/bloc/workoutdetails_bloc.dart' as workout_bloc;
+import 'package:ultrasenses_fitboard/screens/workout_details_screen/bloc/workoutdetails_bloc.dart'
+    as workout_bloc;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,14 +15,15 @@ class StartWorkoutContent extends StatelessWidget {
   final ExerciseData exercise;
   final ExerciseData? nextExercise;
 
-  const StartWorkoutContent({required this.exercise, required this.nextExercise});
+  const StartWorkoutContent(
+      {required this.exercise, required this.nextExercise});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: ColorConstants.white,
+      color: ColorConstants.darkModeBackgroundColor,
       child: SafeArea(
         child: _createDetailedExercise(context),
       ),
@@ -66,7 +68,10 @@ class StartWorkoutContent extends StatelessWidget {
                 SizedBox(width: 17),
                 Text(
                   TextConstants.back,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: ColorConstants.textWhite),
                 ),
               ],
             );
@@ -84,7 +89,8 @@ class StartWorkoutContent extends StatelessWidget {
     return Container(
       height: 264,
       width: double.infinity,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: ColorConstants.white),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20), color: ColorConstants.white),
       child: StartWorkoutVideo(
         exercise: exercise,
         onPlayTapped: (time) {
@@ -98,11 +104,19 @@ class StartWorkoutContent extends StatelessWidget {
   }
 
   Widget _createTitle() {
-    return Text(exercise.title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold));
+    return Text(exercise.title,
+        style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: ColorConstants.textWhite));
   }
 
   Widget _createDescription() {
-    return Text(exercise.description, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500));
+    return Text(exercise.description,
+        style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: ColorConstants.textWhite));
   }
 
   Widget _createSteps() {
@@ -120,7 +134,7 @@ class StartWorkoutContent extends StatelessWidget {
     // final bloc = BlocProvider.of<StartWorkoutBloc>(context);
     return Container(
       width: double.infinity,
-      color: ColorConstants.white,
+      color: ColorConstants.darkModeBackgroundColor,
       child: Column(
         children: [
           nextExercise != null
@@ -147,7 +161,9 @@ class StartWorkoutContent extends StatelessWidget {
                     const SizedBox(width: 6.5),
                     const Icon(Icons.access_time, size: 20),
                     const SizedBox(width: 6.5),
-                    Text('00:${nextExercise!.minutes > 10 ? nextExercise!.minutes : '0${nextExercise!.minutes}'}')
+                    Text(
+                        '00:${nextExercise!.minutes > 10 ? nextExercise!.minutes : '0${nextExercise!.minutes}'}',
+                        style: const TextStyle(color: ColorConstants.textWhite))
                     // BlocBuilder<StartWorkoutBloc, StartWorkoutState>(
                     //   buildWhen: (_, currState) => currState is PlayTimerState || currState is PauseTimerState,
                     //   builder: (context, state) {
@@ -172,17 +188,25 @@ class StartWorkoutContent extends StatelessWidget {
       title: nextExercise != null ? TextConstants.next : 'Finish',
       onTap: () {
         if (nextExercise != null) {
-          List<ExerciseData> exercisesList = BlocProvider.of<workout_bloc.WorkoutDetailsBloc>(context).workout.exerciseDataList;
+          List<ExerciseData> exercisesList =
+              BlocProvider.of<workout_bloc.WorkoutDetailsBloc>(context)
+                  .workout
+                  .exerciseDataList;
           int currentExerciseIndex = exercisesList.indexOf(exercise);
           if (currentExerciseIndex < exercisesList.length - 1) {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
                   builder: (_) => BlocProvider.value(
-                        value: BlocProvider.of<workout_bloc.WorkoutDetailsBloc>(context),
+                        value: BlocProvider.of<workout_bloc.WorkoutDetailsBloc>(
+                            context),
                         child: StartWorkoutPage(
                           exercise: exercisesList[currentExerciseIndex + 1],
-                          currentExercise: exercisesList[currentExerciseIndex + 1],
-                          nextExercise: currentExerciseIndex + 2 < exercisesList.length ? exercisesList[currentExerciseIndex + 2] : null,
+                          currentExercise:
+                              exercisesList[currentExerciseIndex + 1],
+                          nextExercise:
+                              currentExerciseIndex + 2 < exercisesList.length
+                                  ? exercisesList[currentExerciseIndex + 2]
+                                  : null,
                         ),
                       )),
             );
@@ -211,10 +235,19 @@ class Step extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             color: ColorConstants.primaryColor.withOpacity(0.12),
           ),
-          child: Center(child: Text(number, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: ColorConstants.primaryColor))),
+          child: Center(
+              child: Text(number,
+                  style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: ColorConstants.primaryColor))),
         ),
         const SizedBox(width: 10),
-        Expanded(child: Text(description)),
+        Expanded(
+            child: Text(
+          description,
+          style: const TextStyle(color: ColorConstants.grey),
+        )),
       ],
     );
   }

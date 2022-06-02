@@ -1,3 +1,4 @@
+import 'package:ultrasenses_fitboard/core/const/color_constants.dart';
 import 'package:ultrasenses_fitboard/core/const/path_constants.dart';
 import 'package:ultrasenses_fitboard/core/const/text_constants.dart';
 import 'package:ultrasenses_fitboard/data/workout_data.dart';
@@ -49,6 +50,7 @@ class WorkoutDetailsPanel extends StatelessWidget {
         style: const TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
+          color: ColorConstants.textWhite
         ),
       ),
     );

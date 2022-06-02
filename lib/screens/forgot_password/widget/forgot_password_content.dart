@@ -24,7 +24,7 @@ class _ForgotPasswordContentState extends State<ForgotPasswordContent> {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: ColorConstants.white,
+      color: ColorConstants.darkModeBackgroundColor,
       child: Stack(
         children: [
           _createMainData(context),

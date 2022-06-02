@@ -184,7 +184,7 @@ class HomeContent extends StatelessWidget {
                 Text(
                   TextConstants.profileSuccessful,
                   style: TextStyle(
-                    color: ColorConstants.textWhite,
+                    color: ColorConstants.grey,
                     fontSize: 16,
                   ),
                   overflow: TextOverflow.ellipsis,

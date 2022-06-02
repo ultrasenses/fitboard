@@ -63,15 +63,8 @@ class ExerciseCell extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.only(left: 10, right: 25, top: 10, bottom: 10),
             decoration: BoxDecoration(
-              color: ColorConstants.white,
+              color: ColorConstants.darkModeCardColor,
               borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: ColorConstants.textWhite.withOpacity(0.12),
-                  blurRadius: 5.0,
-                  spreadRadius: 1.1,
-                ),
-              ],
             ),
             child: Row(
               children: [
@@ -95,7 +88,7 @@ class ExerciseCell extends StatelessWidget {
       width: 75,
       height: 70,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(10),
         image: DecorationImage(
           image: AssetImage(workout.image),
           fit: BoxFit.contain,
