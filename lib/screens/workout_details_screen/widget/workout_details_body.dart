@@ -19,6 +19,7 @@ class WorkoutDetailsBody extends StatelessWidget {
         children: [
           _createImage(),
           _createBackButton(context),
+          _editWorkoutButton()
         ],
       ),
     );
@@ -50,9 +51,31 @@ class WorkoutDetailsBody extends StatelessWidget {
     );
   }
 
+  Widget _editWorkoutButton() {
+    return Positioned(
+      right: 20,
+      top: 6,
+      child: SafeArea(
+        child: BlocBuilder<WorkoutDetailsBloc, WorkoutDetailsState>(
+          builder: (context, state) {
+            return TextButton(
+                onPressed: () async {},
+                style: TextButton.styleFrom(
+                    shape: const CircleBorder(),
+                    backgroundColor:
+                        ColorConstants.primaryColor.withOpacity(0.16)),
+                child:
+                    const Icon(Icons.edit, color: ColorConstants.primaryColor));
+          },
+        ),
+      ),
+    );
+  }
+
   Widget _createImage() {
     return SizedBox(
       width: double.infinity,
+      height: 500,
       child: Image(
         image: AssetImage(workout.image),
         fit: BoxFit.cover,

@@ -13,20 +13,25 @@ class WorkoutContent extends StatelessWidget {
       color: ColorConstants.darkModeBackgroundColor,
       height: double.infinity,
       width: double.infinity,
-      child: _createHomeBody(context),
+      child: Stack(
+        children: [_createHomeBody(context), _editWorkoutButton()],
+      ),
     );
   }
 
   Widget _createHomeBody(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 50),
+      padding: const EdgeInsets.only(top: 70),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text('My training',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: ColorConstants.textWhite)),
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: ColorConstants.textWhite)),
           ),
           const SizedBox(height: 5),
           Expanded(
@@ -41,6 +46,18 @@ class WorkoutContent extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _editWorkoutButton() {
+    return Positioned(
+        top: 64,
+        right: 12,
+        child: TextButton(
+            onPressed: () async {},
+            style: TextButton.styleFrom(
+                shape: const CircleBorder(),
+                backgroundColor: ColorConstants.primaryColor.withOpacity(0.16)),
+            child: const Icon(Icons.edit, color: ColorConstants.primaryColor)));
   }
 
   Widget _createWorkoutCard(WorkoutData workoutData) {

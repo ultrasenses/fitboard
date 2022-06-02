@@ -18,8 +18,13 @@ class WorkoutCard extends StatelessWidget {
       height: 140,
       margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(35),
         color: ColorConstants.darkModeCardColor,
+        image: DecorationImage(
+            image: AssetImage(workout.image),
+            fit: BoxFit.contain,
+            alignment: Alignment.centerRight
+          ),
       ),
       child: Material(
         color: Colors.transparent,
@@ -70,7 +75,7 @@ class WorkoutCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 60),
-                    Expanded(child: ClipRRect(borderRadius: BorderRadius.circular(15), child: Image.asset(workout.image, fit: BoxFit.fill))),
+                    // Expanded(child: ClipRRect(borderRadius: BorderRadius.circular(15), child: Image.asset(workout.image, fit: BoxFit.fill))),
                   ],
                 ),
               ),
