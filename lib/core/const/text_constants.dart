@@ -53,7 +53,7 @@ class TextConstants {
   static const String inProgress = "In progress";
   static const String workouts = "Workouts";
 
-  static const String timeSent = "Time sent";
+  static const String timeSent = "Time spent";
   static const String minutes = "Minutes";
 
   static const String discoverWorkouts = "Discover new workouts";
