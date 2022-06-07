@@ -56,7 +56,7 @@ class HomeStatistics extends StatelessWidget {
             ],
           ),
           const Text(
-            '12',
+            '23',
             style: TextStyle(
               fontSize: 48,
               fontWeight: FontWeight.w700,
@@ -83,14 +83,14 @@ class HomeStatistics extends StatelessWidget {
         DataWorkouts(
           icon: PathConstants.inProgress,
           title: TextConstants.inProgress,
-          count: 2,
+          count: 3,
           text: TextConstants.workouts,
         ),
         SizedBox(height: 20),
         DataWorkouts(
           icon: PathConstants.timeSent,
           title: TextConstants.timeSent,
-          count: 62,
+          count: 102,
           text: TextConstants.minutes,
         ),
       ],

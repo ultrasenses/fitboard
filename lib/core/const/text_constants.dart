@@ -59,7 +59,7 @@ class TextConstants {
   static const String discoverWorkouts = "Discover new workouts";
 
   static const String keepProgress = "Keep the progress!";
-  static const String profileSuccessful = "You are more successful than 88% users.";
+  static const String profileSuccessful = "Move on!";
 
   // Home screen -> cardio card
   static const String cardioTitle = "Cardio";
