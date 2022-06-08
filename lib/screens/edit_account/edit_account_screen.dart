@@ -49,7 +49,8 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
         body: _buildContext(context),
         appBar: AppBar(
             title: const Text(TextConstants.editAccount,
-                style: TextStyle(color: ColorConstants.textWhite, fontSize: 18)),
+                style:
+                    TextStyle(color: ColorConstants.textWhite, fontSize: 18)),
             backgroundColor: Colors.transparent,
             elevation: 0,
             leading: IconButton(
@@ -73,7 +74,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
         builder: (context, state) {
           if (state is EditAccountProgress) {
             return Stack(
-              children: [_editAccountContent(context), FitnessLoading()],
+              children: [_editAccountContent(context), const FitnessLoading()],
             );
           }
           if (state is EditAccountError) {
@@ -121,7 +122,9 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
               const SizedBox(height: 15),
               const Text(
                 TextConstants.fullName,
-                style: TextStyle(fontWeight: FontWeight.w600, color: ColorConstants.textWhite),
+                style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: ColorConstants.textWhite),
               ),
               SettingsContainer(
                   child: SettingsTextField(
@@ -132,7 +135,9 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                 const Text(TextConstants.nameShouldContain2Char,
                     style: TextStyle(color: ColorConstants.errorColor)),
               const Text(TextConstants.email,
-                  style: TextStyle(fontWeight: FontWeight.w600, color: ColorConstants.textWhite)),
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: ColorConstants.textWhite)),
               SettingsContainer(
                   child: SettingsTextField(
                 controller: _emailController,
@@ -147,7 +152,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ChangePasswordScreen()));
+                          builder: (context) => const ChangePasswordScreen()));
                 },
                 child: Row(
                   mainAxisSize: MainAxisSize.min,

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:ultrasenses_fitboard/core/extensions/exceptions.dart';
 
 class AuthService {
@@ -49,7 +50,9 @@ class AuthService {
 }
 
 String getExceptionMessage(FirebaseAuthException e) {
-  print(e.code);
+  if (kDebugMode) {
+    print(e.code);
+  }
   switch (e.code) {
     case 'user-not-found':
       return 'User not found';

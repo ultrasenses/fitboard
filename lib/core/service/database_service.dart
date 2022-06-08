@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:ultrasenses_fitboard/core/models/message.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -40,7 +41,9 @@ class DatabaseMethods {
         {'photo': updatedUser.photo, 'username': updatedUser.username},
       );
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
@@ -52,11 +55,15 @@ class DatabaseMethods {
       for (int i = 0; i < querySnapshot.docs.length; i++) {
         listOfUsers.add(querySnapshot.docs[i]['username']);
       }
-      print(listOfUsers);
+      if (kDebugMode) {
+        print(listOfUsers);
+      }
       return listOfUsers;
     } catch (e) {
-      print(e);
-      throw (e);
+      if (kDebugMode) {
+        print(e);
+      }
+      rethrow;
     }
   }
 
@@ -134,8 +141,11 @@ class DatabaseMethods {
       }
       return myCount;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
+    return null;
   }
 
   Future<MessageModel?> getLastMessage(
@@ -154,8 +164,11 @@ class DatabaseMethods {
         return null;
       }
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
+    return null;
   }
 
   clearCount(String userMessageName, String myCurrentUserName) async {
@@ -167,18 +180,24 @@ class DatabaseMethods {
           .doc(myCurrentUserName)
           .set({'count': 0});
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
   logOut(String? uid) async {
     try {
-      FirebaseAuth _auth = FirebaseAuth.instance;
+      FirebaseAuth auth = FirebaseAuth.instance;
       await refUsers.doc(uid).update({'state': false});
-      await _auth.signOut();
-      print('Logged out');
+      await auth.signOut();
+      if (kDebugMode) {
+        print('Logged out');
+      }
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
@@ -193,7 +212,9 @@ class DatabaseMethods {
         'photo': myUser.photo
       });
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
@@ -216,7 +237,9 @@ class DatabaseMethods {
         "timestamp": timeStamp,
       });
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 

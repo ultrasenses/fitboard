@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:ultrasenses_fitboard/core/extensions/exceptions.dart';
 import 'package:ultrasenses_fitboard/core/service/auth_service.dart';
 
@@ -10,7 +11,9 @@ class UserService {
       await firebase.currentUser?.updatePhotoURL(photoUrl);
       return true;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
       return false;
     }
   }
@@ -22,7 +25,9 @@ class UserService {
       await firebase.currentUser?.updateEmail(email);
       return true;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
       throw Exception(e);
     }
   }

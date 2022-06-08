@@ -64,7 +64,7 @@ class SignUpContent extends StatelessWidget {
   }
 
   Widget _createLoading() {
-    return FitnessLoading();
+    return const FitnessLoading();
   }
 
   Widget _createTitle() {

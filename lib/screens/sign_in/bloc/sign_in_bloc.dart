@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:ultrasenses_fitboard/core/service/auth_service.dart';
 import 'package:ultrasenses_fitboard/core/service/validation_service.dart';
 import 'package:flutter/material.dart';
@@ -31,9 +32,13 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
           yield LoadingState();
           await AuthService.signIn(emailController.text, passwordController.text);
           yield NextTabBarPageState();
-          print("Go to the next page");
+          if (kDebugMode) {
+            print("Go to the next page");
+          }
         } catch (e) {
-          print('E to tstrng: ' + e.toString());
+          if (kDebugMode) {
+            print('E to tstrng: $e');
+          }
           yield ErrorState(message: e.toString());
         }
       } else {

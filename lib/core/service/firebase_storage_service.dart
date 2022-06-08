@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:ultrasenses_fitboard/core/service/user_service.dart';
 
 class FirebaseStorageService {
@@ -9,7 +10,9 @@ class FirebaseStorageService {
   static Future<void> listExample() async {
     ListResult result = await FirebaseStorage.instance.ref().listAll();
     for (var element in result.items) {
-      print(element.name);
+      if (kDebugMode) {
+        print(element.name);
+      }
     }
   }
 
@@ -25,7 +28,9 @@ class FirebaseStorageService {
       }
       return false;
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
       return false;
     }
   }
