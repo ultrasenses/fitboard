@@ -28,4 +28,6 @@ class ColorConstants {
 
   static const darkModeCardColor = Color(0xFF212325);
   static const lightModeCardColor = Color(0xFF161819);
+
+  static const darkModeAppBarColor = Color.fromRGBO(255, 20, 21, 0.1);
 }

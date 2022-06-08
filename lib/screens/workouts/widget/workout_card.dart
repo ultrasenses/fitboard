@@ -2,6 +2,7 @@ import 'package:ultrasenses_fitboard/core/const/color_constants.dart';
 import 'package:ultrasenses_fitboard/core/const/text_constants.dart';
 import 'package:ultrasenses_fitboard/data/workout_data.dart';
 import 'package:ultrasenses_fitboard/screens/workouts/bloc/workouts_bloc.dart';
+import 'package:ultrasenses_fitboard/screens/workouts/widget/workout_tag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -15,7 +16,7 @@ class WorkoutCard extends StatelessWidget {
     final bloc = BlocProvider.of<WorkoutsBloc>(context);
     return Container(
       width: double.infinity,
-      height: 140,
+      height: 170,
       margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(35),
@@ -23,8 +24,7 @@ class WorkoutCard extends StatelessWidget {
         image: DecorationImage(
             image: AssetImage(workout.image),
             fit: BoxFit.contain,
-            alignment: Alignment.centerRight
-          ),
+            alignment: Alignment.centerRight),
       ),
       child: Material(
         color: Colors.transparent,
@@ -37,7 +37,8 @@ class WorkoutCard extends StatelessWidget {
                 bloc.add(CardTappedEvent(workout: workout));
               },
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -47,30 +48,48 @@ class WorkoutCard extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(workout.title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: ColorConstants.textWhite)),
-                          const SizedBox(height: 3),
-                          Text("${workout.exercices} ${TextConstants.exercisesUppercase}",
-                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: ColorConstants.grey),
+                          Text(workout.title,
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: ColorConstants.textWhite)),
+                          const SizedBox(height: 6),
+                          Text(
+                              "${workout.exercices} ${TextConstants.exercisesUppercase}",
+                              style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  color: ColorConstants.grey),
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2),
-                          const SizedBox(height: 3),
-                          Text("${workout.minutes} ${TextConstants.minutes}",
-                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: ColorConstants.grey),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2),
-                          const Spacer(),
-                          Text('${workout.currentProgress}/${workout.progress}', style: const TextStyle(fontSize: 10, color: ColorConstants.textWhite)),
-                          const SizedBox(height: 3),
+                          const SizedBox(height: 12),
+                          Text('${workout.currentProgress}/${workout.progress}',
+                              style: const TextStyle(
+                                  fontSize: 10,
+                                  color: ColorConstants.textWhite)),
+                          const SizedBox(height: 6),
                           Padding(
-                            padding: const EdgeInsets.only(right: 30.0, left: 2),
+                            padding:
+                                const EdgeInsets.only(right: 30.0, left: 2),
                             child: LinearPercentIndicator(
-                              percent: workout.currentProgress / workout.progress,
+                              percent:
+                                  workout.currentProgress / workout.progress,
                               progressColor: ColorConstants.primaryColor,
-                              backgroundColor: ColorConstants.primaryColor.withOpacity(0.12),
+                              backgroundColor:
+                                  ColorConstants.primaryColor.withOpacity(0.12),
                               lineHeight: 6,
                               padding: EdgeInsets.zero,
                             ),
-                          )
+                          ),
+                          const SizedBox(height: 12),
+                          Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 30.0, left: 2),
+                              child: Row(
+                                children: workout.tagsList
+                                    .map((e) => WorkoutTag(tagData: e))
+                                    .toList(),
+                              ))
                         ],
                       ),
                     ),

@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:ultrasenses_fitboard/core/const/path_constants.dart';
 import 'package:ultrasenses_fitboard/core/const/text_constants.dart';
 import 'package:ultrasenses_fitboard/data/exercise_data.dart';
 import 'package:ultrasenses_fitboard/data/workout_data.dart';
+import 'package:ultrasenses_fitboard/data/workout_tag_data.dart';
 import 'package:ultrasenses_fitboard/screens/onboarding/widget/onboarding_tile.dart';
 
 class DataConstants {
@@ -33,6 +35,11 @@ class DataConstants {
         currentProgress: 10,
         progress: 16,
         image: PathConstants.yoga,
+        tagsList: [
+          WorkoutTagData(title: "yoga", color: const Color(0xFF000000)),
+          WorkoutTagData(title: "🔥hard!!!", color: const Color(0xFFE5412A)),
+          WorkoutTagData(title: "spotify", color: const Color(0xFF00AA6D)),
+        ],
         exerciseDataList: [
           ExerciseData(
             title: TextConstants.reclining,
@@ -67,12 +74,18 @@ class DataConstants {
           ),
         ]),
     WorkoutData(
-        title: TextConstants.pilatesTitle,
-        exercices: TextConstants.pilatesExercises,
-        minutes: TextConstants.pilatesMinutes,
+        title: TextConstants.prometheusTitle,
+        exercices: TextConstants.prometheusExercises,
+        minutes: TextConstants.prometheusMinutes,
         currentProgress: 1,
         progress: 20,
-        image: PathConstants.pilates,
+        image: PathConstants.prometheus,
+        tagsList: [
+          WorkoutTagData(title: "workout", color: const Color(0xFF7059EB)),
+          WorkoutTagData(title: "spotify", color: const Color(0xFF00AA6D)),
+          WorkoutTagData(
+              title: "🚀new", color: const Color.fromARGB(255, 223, 135, 123)),
+        ],
         exerciseDataList: [
           ExerciseData(
             title: TextConstants.reclining,
@@ -106,6 +119,11 @@ class DataConstants {
         currentProgress: 12,
         progress: 14,
         image: PathConstants.fullBody,
+        tagsList: [
+          WorkoutTagData(
+              title: "full-body", color: const Color.fromARGB(255, 24, 0, 161)),
+          WorkoutTagData(title: "spotify", color: const Color(0xFF00AA6D))
+        ],
         exerciseDataList: [
           ExerciseData(
             title: TextConstants.reclining,
@@ -139,6 +157,10 @@ class DataConstants {
       currentProgress: 0,
       progress: 8,
       image: PathConstants.stretching,
+      tagsList: [
+        WorkoutTagData(title: "stretching", color: const Color(0xFF7059EB)),
+        WorkoutTagData(title: "spotify", color: const Color(0xFF00AA6D))
+      ],
       exerciseDataList: [
         ExerciseData(
           title: TextConstants.reclining,
@@ -176,6 +198,12 @@ class DataConstants {
         currentProgress: 10,
         progress: 16,
         image: PathConstants.cardio,
+        tagsList: [
+          WorkoutTagData(title: "health", color: const Color(0xFF00AA6D)),
+          WorkoutTagData(title: "cardio", color: const Color(0xFFE5412A)),
+          WorkoutTagData(
+              title: "15 min", color: const Color.fromARGB(255, 227, 255, 126)),
+        ],
         exerciseDataList: [
           ExerciseData(
             title: TextConstants.reclining,
@@ -215,7 +243,10 @@ class DataConstants {
         minutes: TextConstants.armsMinutes,
         currentProgress: 1,
         progress: 20,
-        image: PathConstants.cardio,
+        image: PathConstants.arms,
+        tagsList: [
+          WorkoutTagData(title: "arms", color: const Color(0xFF000000))
+        ],
         exerciseDataList: [
           ExerciseData(
             title: TextConstants.reclining,

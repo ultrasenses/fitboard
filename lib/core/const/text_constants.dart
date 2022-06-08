@@ -43,7 +43,7 @@ class TextConstants {
   // Tab bar
   static const String homeIcon = "Home";
   static const String workoutsIcon = "Workouts";
-  static const String settingsIcon = "Settings";
+  static const String settingsIcon = "Profile";
 
   // Home screen
   static const String checkActivity = "Let's check your activity";
@@ -76,10 +76,10 @@ class TextConstants {
   static const String yogaExercises = "16";
   static const String yogaMinutes = "52";
 
-  //Workout screen -> pilates card
-  static const String pilatesTitle = "Pilates";
-  static const String pilatesExercises = "20";
-  static const String pilatesMinutes = "60";
+  //Workout screen -> prometheus card
+  static const String prometheusTitle = "Prometheus";
+  static const String prometheusExercises = "20";
+  static const String prometheusMinutes = "60";
 
   //Workout screen -> fullBody card
   static const String fullBodyTitle = "Full body";

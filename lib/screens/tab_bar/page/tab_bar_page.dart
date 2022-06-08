@@ -34,28 +34,28 @@ class TabBarPage extends StatelessWidget {
     final bloc = BlocProvider.of<TabBarBloc>(context);
     return BottomNavigationBar(
       currentIndex: bloc.currentIndex,
-      fixedColor: ColorConstants.primaryYellowColor,
+      fixedColor: ColorConstants.primaryColor,
       unselectedItemColor: ColorConstants.textWhite,
       backgroundColor: ColorConstants.darkModeBackgroundColor,
       items: [
         BottomNavigationBarItem(
           icon: Image(
             image: const AssetImage(PathConstants.home),
-            color: bloc.currentIndex == 0 ? ColorConstants.primaryYellowColor : null,
+            color: bloc.currentIndex == 0 ? ColorConstants.primaryColor : null,
           ),
           label: TextConstants.homeIcon,
         ),
         BottomNavigationBarItem(
           icon: Image(
             image: const AssetImage(PathConstants.workouts),
-            color: bloc.currentIndex == 1 ? ColorConstants.primaryYellowColor : null,
+            color: bloc.currentIndex == 1 ? ColorConstants.primaryColor : null,
           ),
           label: TextConstants.workoutsIcon,
         ),
         BottomNavigationBarItem(
           icon: Image(
             image: const AssetImage(PathConstants.settings),
-            color: bloc.currentIndex == 2 ? ColorConstants.primaryYellowColor : null,
+            color: bloc.currentIndex == 2 ? ColorConstants.primaryColor : null,
           ),
           label: TextConstants.settingsIcon,
         ),

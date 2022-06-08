@@ -3,12 +3,10 @@ import 'package:ultrasenses_fitboard/data/workout_data.dart';
 import 'package:flutter/material.dart';
 
 class WorkoutCard extends StatelessWidget {
-  final Color color;
   final WorkoutData workout;
   final Function() onTap;
 
   const WorkoutCard({
-    required this.color,
     required this.workout,
     required this.onTap,
   });
@@ -27,7 +25,11 @@ class WorkoutCard extends StatelessWidget {
         width: screenWidth * 0.6,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: color,
+          color: ColorConstants.darkModeCardColor,
+        image: DecorationImage(
+            image: AssetImage(workout.image),
+            fit: BoxFit.cover,
+            alignment: Alignment.centerRight),
         ),
         child: Stack(
           children: [
@@ -67,13 +69,6 @@ class WorkoutCard extends StatelessWidget {
                   ],
                 ),
               ],
-            ),
-            Positioned(
-              right: 0,
-              bottom: 0,
-              child: Image(
-                image: AssetImage(workout.image),
-              ),
             ),
           ],
         ),

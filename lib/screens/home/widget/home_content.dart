@@ -67,19 +67,19 @@ class HomeContent extends StatelessWidget {
             children: [
               const SizedBox(width: 20),
               WorkoutCard(
-                  color: ColorConstants.cardioColor,
+                  // color: ColorConstants.cardioColor,
                   workout: DataConstants.homeWorkouts[0],
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => WorkoutDetailsPage(
-                            workout: DataConstants.workouts[0],
+                            workout: DataConstants.homeWorkouts[0],
                           )))),
               const SizedBox(width: 15),
               WorkoutCard(
-                  color: ColorConstants.armsColor,
+                  // color: ColorConstants.armsColor,
                   workout: DataConstants.homeWorkouts[1],
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => WorkoutDetailsPage(
-                            workout: DataConstants.workouts[2],
+                            workout: DataConstants.homeWorkouts[1],
                           )))),
               const SizedBox(width: 20),
             ],
