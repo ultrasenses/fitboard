@@ -2,6 +2,7 @@ import 'package:ultrasenses_fitboard/core/const/color_constants.dart';
 import 'package:ultrasenses_fitboard/core/const/path_constants.dart';
 import 'package:ultrasenses_fitboard/core/const/text_constants.dart';
 import 'package:ultrasenses_fitboard/screens/home/page/home_page.dart';
+import 'package:ultrasenses_fitboard/screens/rooms/page/rooms_page.dart';
 import 'package:ultrasenses_fitboard/screens/settings/settings_screen.dart';
 import 'package:ultrasenses_fitboard/screens/tab_bar/bloc/tab_bar_bloc.dart';
 import 'package:ultrasenses_fitboard/screens/workouts/page/workouts_page.dart';
@@ -33,6 +34,7 @@ class TabBarPage extends StatelessWidget {
   Widget _createdBottomTabBar(BuildContext context) {
     final bloc = BlocProvider.of<TabBarBloc>(context);
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       currentIndex: bloc.currentIndex,
       fixedColor: ColorConstants.primaryColor,
       unselectedItemColor: ColorConstants.textWhite,
@@ -54,8 +56,15 @@ class TabBarPage extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Image(
-            image: const AssetImage(PathConstants.settings),
+            image: const AssetImage(PathConstants.networking),
             color: bloc.currentIndex == 2 ? ColorConstants.primaryColor : null,
+          ),
+          label: TextConstants.networking,
+        ),
+        BottomNavigationBarItem(
+          icon: Image(
+            image: const AssetImage(PathConstants.settings),
+            color: bloc.currentIndex == 3 ? ColorConstants.primaryColor : null,
           ),
           label: TextConstants.settingsIcon,
         ),
@@ -70,6 +79,7 @@ class TabBarPage extends StatelessWidget {
     final children = [
       const HomePage(),
       const WorkoutsPage(),
+      const RoomsPage(),
       const SettingsScreen()
       // Scaffold(
       //   body: Center(

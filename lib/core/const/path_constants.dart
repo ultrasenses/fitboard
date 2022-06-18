@@ -10,6 +10,7 @@ class PathConstants {
   // Tabbar
   static const String home = 'assets/icons/home/home_icon.png';
   static const String workouts = 'assets/icons/home/workouts_icon.png';
+  static const String networking = 'assets/icons/home/networking_icon.png';
   static const String settings = 'assets/icons/home/settings_icon.png';
 
   // Home
