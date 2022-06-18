@@ -62,25 +62,15 @@ class WorkoutCard extends StatelessWidget {
                                   color: ColorConstants.grey),
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2),
-                          const SizedBox(height: 12),
-                          Text('${workout.currentProgress}/${workout.progress}',
-                              style: const TextStyle(
-                                  fontSize: 10,
-                                  color: ColorConstants.textWhite)),
                           const SizedBox(height: 6),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(right: 30.0, left: 2),
-                            child: LinearPercentIndicator(
-                              percent:
-                                  workout.currentProgress / workout.progress,
-                              progressColor: ColorConstants.primaryColor,
-                              backgroundColor:
-                                  ColorConstants.primaryColor.withOpacity(0.12),
-                              lineHeight: 6,
-                              padding: EdgeInsets.zero,
-                            ),
-                          ),
+                          Text(
+                              "${workout.minutes} ${TextConstants.minutes}",
+                              style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  color: ColorConstants.grey),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2),
                           const SizedBox(height: 12),
                           Padding(
                               padding:

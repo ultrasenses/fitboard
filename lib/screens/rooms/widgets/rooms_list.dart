@@ -153,7 +153,7 @@ class _RoomsListState extends State<RoomsList> {
             );
           },
           color: RoomsContants.AccentGreen,
-          text: '+ Start a room'),
+          text: '+ Start a training'),
     );
   }
 

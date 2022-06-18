@@ -114,7 +114,7 @@ class _RoomScreenState extends State<RoomScreen> {
               onPressed: () => Navigator.pop(context),
             ),
             const Text(
-              'All rooms',
+              'All training rooms',
               style: TextStyle(color: ColorConstants.textWhite, fontSize: 16),
             ),
             const Spacer(),
@@ -227,7 +227,7 @@ class _RoomScreenState extends State<RoomScreen> {
         Padding(
           padding: const EdgeInsets.all(16),
           child: Text(
-            'Others in the room',
+            'Others in training room',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 15,

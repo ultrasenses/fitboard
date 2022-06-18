@@ -20,17 +20,17 @@ class RoomsContants {
     {
       'image': PathConstants.inProgress,
       'text': 'Open',
-      'selectedMessage': 'Start a room open to everyone',
+      'selectedMessage': 'Start a training open to everyone',
     },
     {
-      'image': PathConstants.progress,
+      'image': PathConstants.finished,
       'text': 'Social',
-      'selectedMessage': 'Start a room with people I follow',
+      'selectedMessage': 'Start a training with people I follow',
     },
     {
-      'image': PathConstants.exerciseTracker,
+      'image': PathConstants.timeSent,
       'text': 'Closed',
-      'selectedMessage': 'Start a room for people I choose',
+      'selectedMessage': 'Start a training for people I choose',
     },
   ];
 }

@@ -31,6 +31,7 @@ class RoundedImage extends StatelessWidget {
     if (path != null) {
       if (path!.startsWith('https://')) {
         return CircleAvatar(
+            backgroundColor: const Color(0x00000000),
             radius: radius,
             child: ClipOval(
                 child: FadeInImage.assetNetwork(
@@ -42,11 +43,15 @@ class RoundedImage extends StatelessWidget {
             )));
       } else {
         return CircleAvatar(
-            backgroundImage: AssetImage(path!), radius: radius);
+            backgroundColor: const Color(0x00000000),
+            backgroundImage: AssetImage(path!),
+            radius: radius);
       }
     } else {
       return CircleAvatar(
-          backgroundImage: const AssetImage(PathConstants.profile), radius: radius);
+          backgroundColor: const Color(0x00000000),
+          backgroundImage: const AssetImage(PathConstants.profile),
+          radius: radius);
     }
   }
 }
