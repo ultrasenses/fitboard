@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ultrasenses_fitboard/core/const/color_constants.dart';
 
 class OnboardingTile extends StatelessWidget {
   final title, imagePath, mainText;
@@ -22,9 +23,9 @@ class OnboardingTile extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 24.0,
-            ),
+                fontWeight: FontWeight.w700,
+                fontSize: 24.0,
+                color: ColorConstants.textWhite),
           ),
           const SizedBox(height: 15),
           Padding(
@@ -35,6 +36,7 @@ class OnboardingTile extends StatelessWidget {
               mainText,
               style: const TextStyle(
                 fontSize: 16.0,
+                color: ColorConstants.textWhite,
               ),
               textAlign: TextAlign.center,
             ),
