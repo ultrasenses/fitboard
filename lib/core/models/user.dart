@@ -1,20 +1,15 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 class UserModel {
-  String? uid;
-  String? username;
-  String? email;
-  String? photo;
-  bool? state;
+  String userName;
+  String userEmail;
+  String? photoUrl;
 
-  UserModel({this.uid, this.email, this.username, this.photo, this.state});
+  UserModel({required this.userName, required this.userEmail, this.photoUrl});
 
-  factory UserModel.fromDocument(DocumentSnapshot doc) {
+  factory UserModel.fromJson(json) {
     return UserModel(
-        uid: doc['uid'],
-        email: doc['email'],
-        username: doc['username'],
-        photo: doc['photo'],
-        state: doc['state']);
+      userName: json['userName'],
+      userEmail: json['userEmail'],
+      photoUrl: json['photoUrl'],
+    );
   }
 }
